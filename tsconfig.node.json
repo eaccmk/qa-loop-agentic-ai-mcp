@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
     "composite": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
+    "ignoreDeprecations": "5.0",
+    "types": ["node"],
     "allowSyntheticDefaultImports": true
   },
   "include": ["vite.config.ts", "playwright.config.ts"]

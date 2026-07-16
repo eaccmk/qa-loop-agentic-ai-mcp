@@ -1,6 +1,6 @@
 # QA Loop in Agentic AI
 
-QA Loop Studio is a small demo app for showing a live browser QA loop with Playwright MCP.
+QA Loop Demo is a small demo web app for showing a live browser QA loop with Playwright MCP.
 
 The idea is simple, pick your "development + testing" style:
 
@@ -45,12 +45,13 @@ This option (2) is useful when the app is right and the test is stale, over-spec
 
 If someone changes the home heading in [src/main.tsx](/src/main.tsx) from `Sell tooling with a strong first impression.` to `Sell tools with confidence.`, the app is still fine but the test expectation is now stale.
 
-The agent should inspect the live page, confirm the new heading is the intended behavior, and update the test assertion in [tests/app.spec.ts](/tests/app.spec.ts).
+The agent should inspect the live page, confirm the new heading is the intended behavior, and update the test assertion in [/tests/*](/tests).
 
 Prompt:
 
 ```text
-Inspect the live app through Playwright MCP. The product behavior is correct but the Playwright test is stale. Update only the failing test assertion to match the real UI, then rerun that test until it passes.
+The UI is correct. Fix only the failing Playwright test in `tests/*`.
+Do not edit app code. Rerun the failing test until green.
 ```
 
 </details>
@@ -69,7 +70,7 @@ Inspect the live app through Playwright MCP. The product behavior is correct but
   <figcaption>Figure 2: Playwright MCP is the browser bridge that lets Codex inspect the live app and verify changes.</figcaption>
 </figure>
 
-## What this repo shows
+## What this contains
 
 - a mock login page
 - a home page with 10 product tiles
@@ -80,43 +81,60 @@ Inspect the live app through Playwright MCP. The product behavior is correct but
 
 ## Setup
 
-If npm blocks install scripts during setup, approve the Vite dependency first:
-
-```bash
-npm install-scripts approve esbuild
-```
-
-On macOS, optionally allow the file watcher:
-
-```bash
-npm install-scripts approve fsevents
-```
-
-Then install dependencies:
+Have `node` installed and then install dependencies:
 
 ```bash
 npm install
 ```
 
-## Run the demo
+<details>[Optional steps]
+<summary>If npm blocks install scripts during setup</summary>
 
-Terminal 1:
+- Approve the Vite dependency first
+
+```bash
+npm install-scripts approve esbuild
+```
+
+- On macOS, optionally allow the file watcher:
+
+```bash
+npm install-scripts approve fsevents
+```
+
+</details>
+
+--- 
+
+## Running the demo on local
+
+Open a fresh Terminal session lets say:
+
+**Terminal 1:**
 
 ```bash
 npm run dev
 ```
 
-Terminal 2:
+**Terminal 2:**
 
 ```bash
 npm run mcp
 ```
 
-Terminal 3:
+**Terminal 3:**
 
 ```bash
 npm run qa:watch
 ```
+
+----
+
+<figure id="qa-loop-mcp-flow">
+  <img src="assets/qa-loop-terminal-cmd.gif" alt="Animated image showing how to run commands in 3 separate terminals" />
+  <figcaption>Figure 3: Animated image showing how to run commands in 3 separate terminals.</figcaption>
+</figure>
+
 
 ## How the loop works
 

@@ -64,7 +64,7 @@ function App() {
     <div className="shell">
       <header className="topbar">
         <div>
-          <div className="eyebrow">QA Loop Studio</div>
+          <div className="eyebrow">QA Loop Demo</div>
           <div className="subtitle">Development page for Playwright-MCP driven product work</div>
         </div>
         <div className="topbar-actions">
