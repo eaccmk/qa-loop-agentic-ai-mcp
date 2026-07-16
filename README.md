@@ -23,7 +23,7 @@ The agent should inspect the live page, confirm the heading mismatch, and make t
 Prompt:
 
 ```text
-Inspect the live app through Playwright MCP. The login test is failing after a UI change. Confirm whether the app or the test is wrong, make the smallest fix, and rerun the login test until it passes.
+Inspect the live app through existing session of Playwright MCP. The tests are failing after a code change. Find the code change and fix so that existing test is wrong again, make the smallest fix, and let MCP rerun the login test until it passes.
 ```
 
 </details>
@@ -51,7 +51,7 @@ Prompt:
 
 ```text
 The UI is correct. Fix only the failing Playwright test in `tests/*`.
-Do not edit app code. Rerun the failing test until green.
+Do not edit app code. Let MCP rerun the failing test until green.
 ```
 
 </details>
