@@ -22,7 +22,7 @@ function start(label, command, args) {
 }
 
 console.log('[qa:demo] starting dev server, MCP server, and auto test watcher');
-start('dev', 'npm', ['run', 'dev']);
+start('dev', 'npm', ['run', 'dev', '--', '--host', '127.0.0.1', '--port', '5173']);
 start('mcp', 'npm', ['run', 'mcp']);
 start('qa:watch', 'npm', ['run', 'qa:watch']);
 
