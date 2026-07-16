@@ -8,7 +8,7 @@ test('login page signs into the storefront', async ({ page }) => {
 
   await expect(page.getByRole('heading', { name: 'Sell tooling with a strong first impression.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: '10 tools for sale' })).toBeVisible();
-  await expect(page.getByText('Development sandbox: QA loop in progress.')).toBeVisible();
+  await expect(page.locator('.status-pill')).toContainText('Signed in with mocked Google SSO.');
 });
 
 test('dark mode switch persists and settings updates are editable', async ({ page }) => {
