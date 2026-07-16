@@ -107,6 +107,17 @@ The watcher is useful for showing a live QA loop:
 4. Fix the app or adjust the test
 5. Repeat until the loop is green
 
+## Scripts
+
+```bash
+npm run dev       # start the web app
+npm run mcp       # start Playwright MCP
+npm run test:e2e  # run Playwright tests once
+npm run test:ui   # open Playwright UI mode
+npm run qa:watch  # rerun tests when files change
+npm run qa:demo   # start app, MCP, and watcher together
+```
+
 ## What this repo is about
 
 - A simple local website with a login screen, home dashboard, profile settings, and theme toggle
