@@ -65,7 +65,7 @@ function App() {
       <header className="topbar">
         <div>
           <div className="eyebrow">QA Loop Studio</div>
-          <div className="subtitle">Development page for Playwright-driven product work</div>
+          <div className="subtitle">Development page for Playwright-MCP driven product work</div>
         </div>
         <div className="topbar-actions">
           <button className="theme-switch" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
