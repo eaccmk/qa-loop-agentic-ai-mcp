@@ -1,4 +1,15 @@
-# QA Loop Studio
+# QA Loop in Agentic AI
+
+**QA Loop (in agentic AI)**
+
+A `QA loop` is a repeating cycle where an AI agent tests a live product on its own. 
+It looks at the product, decides what to test, runs the test, checks the result, and then uses what it learned to test again. 
+This keeps repeating without a person guiding each step.
+
+Here is an **Analogy**:
+
+> It's like a chef who keeps tasting a soup while cooking. 
+> They taste it, notice it needs more salt, adjust it, tastes again, and keeps repeating this until the soup is right, all without anyone telling them to do it.
 
 ![QA Loop Agentic AI](assets/agentic_qa_loop_diagram.png)
 
